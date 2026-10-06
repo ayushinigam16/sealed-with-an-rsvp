@@ -14,7 +14,7 @@ export function Rsvp() {
   const submit = useServerFn(submitRsvp);
   const [rsvpId] = useState(newId);
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">("idle");
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<{ name?: string; mobile?: string; email?: string; status?: string }>({});
   const [status, setStatus] = useState<Status | "">("");
   const [events, setEvents] = useState<string[]>([]);
   const [sentName, setSentName] = useState("");
@@ -26,7 +26,7 @@ export function Rsvp() {
     const name = String(f.get("name") || "").trim();
     const mobile = String(f.get("mobile") || "").trim();
     const email = String(f.get("email") || "").trim();
-    const errs: Record<string, string> = {};
+    const errs: { name?: string; mobile?: string; email?: string; status?: string } = {};
     if (name.length < 2) errs.name = "Please share your full name";
     if (!/^\+?[0-9\s-]{8,16}$/.test(mobile)) errs.mobile = "Please enter a valid mobile number";
     if (email && !/^\S+@\S+\.\S+$/.test(email)) errs.email = "Please check your email";

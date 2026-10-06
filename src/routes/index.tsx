@@ -322,7 +322,7 @@ function Index() {
         {lightbox !== null && (
           <div role="dialog" aria-modal="true" aria-label="Photo viewer" onClick={() => setLightbox(null)}
             className="animate-fade-in fixed inset-0 z-[60] flex items-center justify-center bg-foreground/90 p-4">
-            <img src={wedding.gallery[lightbox].src} alt={wedding.gallery[lightbox].alt} className="max-h-[88vh] max-w-full object-contain" />
+            <img src={wedding.gallery[lightbox]?.src} alt={wedding.gallery[lightbox]?.alt ?? ""} className="max-h-[88vh] max-w-full object-contain" />
             <button className="absolute right-4 top-4 grid h-11 w-11 place-items-center text-primary-foreground" aria-label="Close"><X /></button>
           </div>
         )}
