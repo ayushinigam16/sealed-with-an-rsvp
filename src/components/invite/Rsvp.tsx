@@ -46,7 +46,7 @@ export function Rsvp() {
           message: String(f.get("message") || ""),
         },
       });
-      setSentName(name.split(" ")[0]);
+      setSentName(name.split(" ")[0] ?? name);
       setState("done");
     } catch {
       setState("error");
