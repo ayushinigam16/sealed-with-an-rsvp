@@ -18,21 +18,21 @@ export type WeddingEvent = {
 };
 
 const ramada = {
-  venue: "Ramada Plaza by Wyndham",
+  venue: "Ramada, Varanasi",
   address: "The Mall, Cantonment, Varanasi, Uttar Pradesh 221002",
-  mapsQuery: "Ramada Plaza by Wyndham Varanasi",
+  mapsQuery: "https://share.google/8nOBbVRWvN0xmShgk",
 };
 const taj = {
-  venue: "Eternity by Taj",
+  venue: "Eternity by Taj Group",
   address: "Kanpur, Uttar Pradesh",
-  mapsQuery: "Eternity by Taj Kanpur",
+  mapsQuery: "https://share.google/fqo0eGtq4LnmuTLyq",
 };
 
 export const wedding = {
   bride: "Rajavi",
   groom: "Ayush",
   // Ceremony start, India time
-  dateTimeISO: "2026-11-20T19:00:00+05:30",
+  dateTimeISO: "2026-11-20T20:00:00+05:30",
   dateLabel: "20 November 2026",
   city: "Varanasi",
   invitePhrase: "You're Invited",
@@ -43,19 +43,19 @@ export const wedding = {
   quoteSub: "Your presence is the only gift we ask for.",
   countdownDoneMessage: "Today, we celebrate love.",
   families: {
-    bride: { title: "The Bride's Family", parents: "Mr. & Mrs. Parent Name", note: "Daughter of" },
-    groom: { title: "The Groom's Family", parents: "Mr. & Mrs. Parent Name", note: "Son of" },
+    bride: { title: "The Bride's Family", parents: "Dr. Pankaj Lakhtakia & Dr. Sujata Lakhtakia", note: "Daughter of" },
+    groom: { title: "The Groom's Family", parents: "Dr. Akhilesh Ji Nigam & Anju Nigam", note: "Son of" },
   },
   events: [
-    { id: "mehendi", name: "Mehendi", date: "2026-11-18", start: "4:00 PM", end: "8:00 PM", ...ramada,
-      description: "An afternoon of henna, music and laughter as we begin the celebrations.", dressCode: "Greens & florals" },
-    { id: "haldi", name: "Haldi", date: "2026-11-19", start: "10:00 AM", end: "1:00 PM", ...ramada,
-      description: "A joyous morning of turmeric, blessings and marigolds.", dressCode: "Shades of yellow" },
-    { id: "sangeet", name: "Sangeet", date: "2026-11-19", start: "7:30 PM", end: "11:30 PM", ...ramada,
-      description: "An evening of song, dance and family performances.", dressCode: "Indo-western glamour" },
-    { id: "wedding", name: "Wedding Ceremony", date: "2026-11-20", start: "7:00 PM", end: "Late", ...ramada,
+    { id: "mehendi", name: "Mehndi", date: "2026-11-19", start: "1:00 PM", end: "onwards", ...ramada,
+      description: "An afternoon of henna, music and laughter as we begin the celebrations.", dressCode: "Green" },
+    { id: "sangeet", name: "Sangeet", date: "2026-11-19", start: "7:30 PM", end: "onwards", ...ramada,
+      description: "An evening of song, dance and family performances.", dressCode: "Glittery & Indo-western" },
+    { id: "haldi", name: "Haldi", date: "2026-11-20", start: "12:00 PM", end: "onwards", ...ramada,
+      description: "A joyous afternoon of turmeric, blessings and marigolds.", dressCode: "Yellow, magenta & pink" },
+    { id: "wedding", name: "Wedding Ceremony", date: "2026-11-20", start: "8:00 PM", end: "onwards", ...ramada,
       description: "The sacred pheras, followed by dinner under the stars.", dressCode: "Traditional Indian" },
-    { id: "reception", name: "Reception", date: "2026-11-22", start: "7:30 PM", end: "11:00 PM", ...taj,
+    { id: "reception", name: "Reception", date: "2026-11-22", start: "7:30 PM", end: "onwards", ...taj,
       description: "Celebrate the newlyweds at an elegant evening in Kanpur.", dressCode: "Formal / festive" },
   ] as WeddingEvent[],
   venues: [
@@ -76,4 +76,4 @@ export const wedding = {
 };
 
 export const mapsUrl = (q: string) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+  q.startsWith("https://") ? q : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;

@@ -256,7 +256,7 @@ function Index() {
                   <h3 className="mt-5 text-3xl text-wine">{ev.name}</h3>
                   <p className="mt-2 text-muted-foreground">{ev.description}</p>
                   <ul className="mt-5 space-y-2.5 text-sm">
-                    <li className="flex gap-3"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{ev.start} – {ev.end}</li>
+                    <li className="flex gap-3"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{ev.start} {ev.end === "onwards" ? "onwards" : `– ${ev.end}`}</li>
                     <li className="flex gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><span><strong className="font-medium">{ev.venue}</strong><br />{ev.address}</span></li>
                     <li className="flex gap-3"><Shirt className="mt-0.5 h-4 w-4 shrink-0 text-gold" />{ev.dressCode}</li>
                   </ul>
@@ -329,7 +329,7 @@ function Index() {
 
         {/* RSVP */}
         <Section id="rsvp" eyebrow="Kindly respond" heading="RSVP" className="bg-secondary/50">
-          <p className="reveal mx-auto -mt-6 mb-10 max-w-md text-center font-serif text-lg italic text-muted-foreground">Please let us know by 1 November 2026.</p>
+          <p className="reveal mx-auto -mt-6 mb-10 max-w-md text-center font-serif text-lg italic text-muted-foreground">Please let us know by 30 October 2026.</p>
           <div className="reveal"><Rsvp /></div>
         </Section>
 
