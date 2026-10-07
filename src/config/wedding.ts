@@ -1,8 +1,11 @@
 // Central wedding configuration — edit everything here.
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
+import pGroom from "@/assets/groom-portrait.jpg.asset.json";
+import pHands from "@/assets/couple-hands.jpg.asset.json";
+import pEvening from "@/assets/couple-evening.jpg.asset.json";
+import pHome from "@/assets/couple-at-home.jpg.asset.json";
+import pFestive from "@/assets/couple-festive.jpg.asset.json";
 
 export type WeddingEvent = {
   id: string;
@@ -65,10 +68,11 @@ export const wedding = {
       description: "The setting for our Reception, a graceful evening to toast the beginning.", image: g4 },
   ],
   gallery: [
-    { src: g1, alt: "Varanasi ghats at golden dusk", w: 1024, h: 1280 },
-    { src: g2, alt: "Mehendi hands holding petals", w: 1024, h: 1024 },
-    { src: g3, alt: "Floral mandap lit by candles", w: 1024, h: 768 },
-    { src: g4, alt: "Couple holding hands at sunset", w: 1024, h: 1280 },
+    { src: pFestive.url, alt: "Ayush and Rajavi with sindoor on their foreheads", w: 1024, h: 1280 },
+    { src: pHands.url, alt: "Ayush and Rajavi holding hands", w: 1024, h: 1024 },
+    { src: pGroom.url, alt: "Ayush in a blue patterned vest", w: 1024, h: 1280 },
+    { src: pEvening.url, alt: "Ayush and Rajavi walking together at night", w: 1024, h: 1280 },
+    { src: pHome.url, alt: "Ayush and Rajavi together at home", w: 1024, h: 1024 },
   ],
   shareMessage:
     "We're delighted to invite you to celebrate the wedding of Ayush & Rajavi on 20 November 2026 in Varanasi. Please join us ❤️",
