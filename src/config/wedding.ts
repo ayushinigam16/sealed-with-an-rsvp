@@ -1,5 +1,5 @@
 // Central wedding configuration — edit everything here.
-import g3 from "@/assets/gallery-3.jpg";
+import venueRamada from "@/assets/venue-ramada.jpg";
 import venueTaj from "@/assets/venue-taj.jpg";
 import pHands from "@/assets/couple-hands.jpg.asset.json";
 import pEvening from "@/assets/couple-evening.jpg.asset.json";
@@ -62,7 +62,7 @@ export const wedding = {
   ] as WeddingEvent[],
   venues: [
     { name: ramada.venue, city: "Varanasi", address: ramada.address, mapsQuery: ramada.mapsQuery,
-      description: "Home to the Mehendi, Haldi, Sangeet and Wedding Ceremony, a short drive from the ancient ghats.", image: g3 },
+      description: "Home to the Mehendi, Haldi, Sangeet and Wedding Ceremony, a short drive from the ancient ghats.", image: venueRamada },
     { name: taj.venue, city: "Kanpur", address: taj.address, mapsQuery: taj.mapsQuery,
       description: "The setting for our Reception, a graceful evening to toast the beginning.", image: venueTaj },
   ],
