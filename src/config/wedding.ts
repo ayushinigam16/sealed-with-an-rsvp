@@ -1,6 +1,6 @@
 // Central wedding configuration — edit everything here.
 import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
+import venueTaj from "@/assets/venue-taj.jpg";
 import pHands from "@/assets/couple-hands.jpg.asset.json";
 import pEvening from "@/assets/couple-evening.jpg.asset.json";
 import pHome from "@/assets/couple-at-home.jpg.asset.json";
@@ -64,7 +64,7 @@ export const wedding = {
     { name: ramada.venue, city: "Varanasi", address: ramada.address, mapsQuery: ramada.mapsQuery,
       description: "Home to the Mehendi, Haldi, Sangeet and Wedding Ceremony, a short drive from the ancient ghats.", image: g3 },
     { name: taj.venue, city: "Kanpur", address: taj.address, mapsQuery: taj.mapsQuery,
-      description: "The setting for our Reception, a graceful evening to toast the beginning.", image: g4 },
+      description: "The setting for our Reception, a graceful evening to toast the beginning.", image: venueTaj },
   ],
   gallery: [
     { src: pFestive.url, alt: "Ayush and Rajavi with sindoor on their foreheads", w: 1024, h: 1280 },
