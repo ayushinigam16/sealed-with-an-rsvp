@@ -26,7 +26,7 @@ const ramada = {
 };
 const taj = {
   venue: "Eternity by Taj Group",
-  address: "Kanpur, Uttar Pradesh",
+  address: "Gram Baikunthpur, Sadar, Kanpur, New Kanpur City, Uttar Pradesh 208017",
   mapsQuery: "https://share.google/fqo0eGtq4LnmuTLyq",
 };
 
@@ -45,8 +45,8 @@ export const wedding = {
   quoteSub: "Your presence is the only gift we ask for.",
   countdownDoneMessage: "Today, we celebrate love.",
   families: {
-    bride: { title: "The Bride's Family", parents: "Dr. Pankaj Lakhtakia & Dr. Sujata Lakhtakia", note: "Daughter of" },
-    groom: { title: "The Groom's Family", parents: "Dr. Akhilesh Ji Nigam & Anju Nigam", note: "Son of" },
+    bride: { title: "The Bride's Family", parents: "Dr. Sujata Lakhtakia & Dr. Pankaj Lakhtakia", note: "Daughter of" },
+    groom: { title: "The Groom's Family", parents: "Anju Nigam & Dr. Akhilesh Ji Nigam", note: "Son of" },
   },
   events: [
     { id: "mehendi", name: "Mehndi", date: "2026-11-19", start: "1:00 PM", end: "onwards", ...ramada,
