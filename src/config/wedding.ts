@@ -20,7 +20,7 @@ export type WeddingEvent = {
 };
 
 const ramada = {
-  venue: "Ramada, Varanasi",
+  venue: "Ramada Plaza by Wyndham JHV Varanasi",
   address: "The Mall, Cantonment, Varanasi, Uttar Pradesh 221002",
   mapsQuery: "https://share.google/8nOBbVRWvN0xmShgk",
 };
