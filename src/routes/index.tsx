@@ -171,6 +171,14 @@ function Index() {
   useReveal();
 
   useEffect(() => { if (sessionStorage.getItem("opened")) setOpened(true); }, []);
+  // Try autoplay as soon as the page loads; browsers that block it fall back
+  // to starting the music on the first tap (opening the invitation).
+  useEffect(() => {
+    const a = audio.current;
+    if (!a) return;
+    a.volume = 0.9;
+    a.play().then(() => { setPlaying(true); sessionStorage.setItem("music", "on"); }).catch(() => {});
+  }, []);
   useEffect(() => {
     if (!lightbox && lightbox !== 0) return;
     const k = (e: KeyboardEvent) => {
@@ -185,7 +193,7 @@ function Index() {
   const onOpen = () => {
     setOpened(true);
     sessionStorage.setItem("opened", "1");
-    if (sessionStorage.getItem("music") === "on") toggleMusic(true);
+    toggleMusic(true);
   };
   const toggleMusic = (force?: boolean) => {
     const a = audio.current; if (!a) return;
@@ -202,7 +210,7 @@ function Index() {
 
   return (
     <>
-      <audio ref={audio} src={wedding.musicSrc} loop preload="none" onError={() => setMusicOk(false)} />
+      <audio ref={audio} src={wedding.musicSrc} loop preload="auto" onError={() => setMusicOk(false)} />
       {!opened && <Opening onOpen={onOpen} />}
       {opened && <Petals />}
 
