@@ -193,7 +193,7 @@ function Index() {
   const onOpen = () => {
     setOpened(true);
     sessionStorage.setItem("opened", "1");
-    if (sessionStorage.getItem("music") === "on") toggleMusic(true);
+    toggleMusic(true);
   };
   const toggleMusic = (force?: boolean) => {
     const a = audio.current; if (!a) return;
