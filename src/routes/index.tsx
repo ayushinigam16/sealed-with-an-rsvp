@@ -171,6 +171,14 @@ function Index() {
   useReveal();
 
   useEffect(() => { if (sessionStorage.getItem("opened")) setOpened(true); }, []);
+  // Try autoplay as soon as the page loads; browsers that block it fall back
+  // to starting the music on the first tap (opening the invitation).
+  useEffect(() => {
+    const a = audio.current;
+    if (!a) return;
+    a.volume = 0.9;
+    a.play().then(() => { setPlaying(true); sessionStorage.setItem("music", "on"); }).catch(() => {});
+  }, []);
   useEffect(() => {
     if (!lightbox && lightbox !== 0) return;
     const k = (e: KeyboardEvent) => {
