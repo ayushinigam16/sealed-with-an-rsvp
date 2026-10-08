@@ -103,6 +103,8 @@
 }
 @keyframes draw { from { stroke-dashoffset: 400; } to { stroke-dashoffset: 0; } }
 @keyframes seal-crack { 0% { transform: scale(1); } 40% { transform: scale(.9) rotate(-6deg); } 100% { transform: scale(1.6); opacity: 0; } }
+@keyframes medallion-spin { to { transform: rotate(360deg); } }
+.medallion-rings { animation: medallion-spin 60s linear infinite; transform-origin: center; }
 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s ease; }
 .reveal.in { opacity: 1; transform: none; }
