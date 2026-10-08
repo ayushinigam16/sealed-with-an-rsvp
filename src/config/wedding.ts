@@ -5,6 +5,7 @@ import pHands from "@/assets/couple-hands.jpg.asset.json";
 import pEvening from "@/assets/couple-evening.jpg.asset.json";
 import pHome from "@/assets/couple-at-home.jpg.asset.json";
 import pFestive from "@/assets/couple-festive.jpg.asset.json";
+import pMusic from "@/assets/music-flute.mp3.asset.json";
 
 export type WeddingEvent = {
   id: string;
@@ -74,7 +75,7 @@ export const wedding = {
   ],
   shareMessage:
     "We're delighted to invite you to celebrate the wedding of Ayush & Rajavi on 20 November 2026 in Varanasi. Please join us ❤️",
-  musicSrc: "/music.mp3", // replace with your own track in /public
+  musicSrc: pMusic.url, // "Tujh Mein Rab Dikhta Hai" (flute version) — plays via the floating music button
 };
 
 export const mapsUrl = (q: string) =>
