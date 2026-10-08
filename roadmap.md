@@ -4,5 +4,6 @@
 - [x] Rename Varanasi venue to "Ramada Plaza by Wyndham JHV Varanasi"
 - [x] Update Eternity by Taj Group address to Gram Baikunthpur, Sadar, Kanpur, New Kanpur City, Uttar Pradesh 208017
 - [x] Parents section: mother's name first, then father's
-- [ ] Add background music — blocked: needs a licensed audio file (MP3) uploaded by the family; YouTube links can't be used
+- [x] Add background music — "Tujh Mein Rab Dikhta Hai" (flute version) MP3 uploaded by the family, wired to the floating music button
+- [ ] Offer alternative "Open Invitation" button designs in place of the wax seal
 - [ ] After publishing, switch the share preview image to src/assets/og.jpg
