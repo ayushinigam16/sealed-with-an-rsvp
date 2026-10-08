@@ -113,11 +113,16 @@ function Opening({ onOpen }: { onOpen: () => void }) {
               </svg>
               <span className="relative grid h-24 w-24 place-items-center overflow-hidden rounded-full border-2 border-gold shadow-card transition-transform duration-500 group-hover:scale-105 group-active:scale-95"
                 style={{ background: "linear-gradient(135deg, var(--wine), color-mix(in oklab, var(--wine) 55%, black))", ...(cracking ? { animation: "seal-crack .9s ease forwards" } : {}) }}>
-                <svg viewBox="0 0 100 100" aria-hidden className="absolute h-16 w-16 text-gold opacity-60" fill="currentColor" stroke="currentColor">
-                  <path d="M50 12 C44 28 34 36 22 40 C34 44 44 52 50 68 C56 52 66 44 78 40 C66 36 56 28 50 12 Z" strokeWidth="0.5" />
-                  <path d="M50 68 C46 80 42 86 36 92 M50 68 C54 80 58 86 64 92" fill="none" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-                <span className="relative z-10 font-serif text-xl tracking-wide text-primary-foreground">A&amp;R</span>
+                <span className="relative z-10 flex flex-col items-center">
+                  <svg viewBox="0 0 100 60" aria-hidden className="h-6 w-10 text-gold" fill="currentColor">
+                    <path d="M50 4 C45 14 45 26 50 36 C55 26 55 14 50 4 Z" />
+                    <path d="M32 16 C30 28 36 38 47 41 C45 30 39 22 32 16 Z" />
+                    <path d="M68 16 C70 28 64 38 53 41 C55 30 61 22 68 16 Z" />
+                    <path d="M14 30 C22 42 34 47 46 46 C38 38 26 33 14 30 Z" />
+                    <path d="M86 30 C78 42 66 47 54 46 C62 38 74 33 86 30 Z" />
+                  </svg>
+                  <span className="mt-1 font-serif text-lg tracking-wide text-primary-foreground">A&amp;R</span>
+                </span>
                 <span aria-hidden className="absolute inset-0 -translate-x-full bg-gradient-to-tr from-transparent via-primary-foreground/15 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
               </span>
             </div>
