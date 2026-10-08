@@ -210,7 +210,7 @@ function Index() {
 
   return (
     <>
-      <audio ref={audio} src={wedding.musicSrc} loop preload="none" onError={() => setMusicOk(false)} />
+      <audio ref={audio} src={wedding.musicSrc} loop preload="auto" onError={() => setMusicOk(false)} />
       {!opened && <Opening onOpen={onOpen} />}
       {opened && <Petals />}
 
