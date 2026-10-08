@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MapPin, Clock, Shirt, Share2, Link2, MessageCircle, Music2, Pause, Menu, X } from "lucide-react";
-import seal from "@/assets/seal.png";
 import { wedding, mapsUrl } from "@/config/wedding";
 import { Rsvp } from "@/components/invite/Rsvp";
 
@@ -101,10 +100,33 @@ function Opening({ onOpen }: { onOpen: () => void }) {
             <p className="mt-4 text-sm tracking-[0.25em] uppercase">{wedding.dateLabel}</p>
             <p className="mt-1 font-serif text-lg italic text-muted-foreground">{wedding.city}</p>
           </div>
-          <button onClick={open} disabled={cracking} className="group my-4 flex flex-col items-center gap-3" aria-label="Open invitation">
-            <img src={seal} alt="" width={816} height={816} className="h-32 w-32 drop-shadow-xl transition-transform group-hover:scale-105 sm:h-36 sm:w-36"
-              style={cracking ? { animation: "seal-crack .9s ease forwards" } : undefined} />
-            <span className="eyebrow text-wine">Open Invitation</span>
+          <button onClick={open} disabled={cracking} className="group my-4 flex flex-col items-center gap-5" aria-label="Open invitation">
+            <div className="relative grid h-40 w-40 place-items-center">
+              <svg viewBox="0 0 120 120" aria-hidden className="medallion-rings absolute inset-0 h-full w-full text-gold/70 transition-transform duration-700 group-hover:scale-110" fill="none" stroke="currentColor">
+                <circle cx="60" cy="60" r="57" strokeWidth="0.5" strokeDasharray="1 3" />
+                <circle cx="60" cy="60" r="51" strokeWidth="0.6" />
+                <circle cx="60" cy="60" r="45.5" strokeWidth="0.4" strokeDasharray="6 4" />
+                {Array.from({ length: 8 }, (_, i) => {
+                  const a = (i * Math.PI) / 4;
+                  return <circle key={i} cx={60 + 54 * Math.cos(a)} cy={60 + 54 * Math.sin(a)} r="1.2" strokeWidth="0.5" />;
+                })}
+              </svg>
+              <span className="relative grid h-24 w-24 place-items-center overflow-hidden rounded-full border-2 border-gold shadow-card transition-transform duration-500 group-hover:scale-105 group-active:scale-95"
+                style={{ background: "linear-gradient(135deg, var(--wine), color-mix(in oklab, var(--wine) 55%, black))", ...(cracking ? { animation: "seal-crack .9s ease forwards" } : {}) }}>
+                <span className="relative z-10 flex flex-col items-center">
+                  <svg viewBox="0 0 100 60" aria-hidden className="h-6 w-10 text-gold" fill="currentColor">
+                    <path d="M50 4 C45 14 45 26 50 36 C55 26 55 14 50 4 Z" />
+                    <path d="M32 16 C30 28 36 38 47 41 C45 30 39 22 32 16 Z" />
+                    <path d="M68 16 C70 28 64 38 53 41 C55 30 61 22 68 16 Z" />
+                    <path d="M14 30 C22 42 34 47 46 46 C38 38 26 33 14 30 Z" />
+                    <path d="M86 30 C78 42 66 47 54 46 C62 38 74 33 86 30 Z" />
+                  </svg>
+                  <span className="mt-1 font-serif text-lg tracking-wide text-primary-foreground">A&amp;R</span>
+                </span>
+                <span aria-hidden className="absolute inset-0 -translate-x-full bg-gradient-to-tr from-transparent via-primary-foreground/15 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+              </span>
+            </div>
+            <span className="eyebrow text-wine transition-all duration-500 group-hover:tracking-[0.45em]">Open Invitation</span>
           </button>
           <p className="max-w-xs font-serif text-lg italic leading-snug text-muted-foreground">{wedding.inviteLine}</p>
         </div>
