@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { MapPin, Clock, Shirt, Share2, Link2, MessageCircle, Music2, Pause, Menu, X } from "lucide-react";
 import { wedding, mapsUrl } from "@/config/wedding";
 import { Rsvp } from "@/components/invite/Rsvp";
+import { Gallery } from "@/components/invite/Gallery";
 
 const title = `${wedding.groom} & ${wedding.bride} — Wedding Invitation · ${wedding.dateLabel}`;
 const desc = `Join us in ${wedding.city} on ${wedding.dateLabel} as ${wedding.groom} & ${wedding.bride} celebrate their wedding. View events and RSVP.`;
@@ -88,9 +89,10 @@ function Opening({ onOpen }: { onOpen: () => void }) {
     setTimeout(onOpen, 1500);
   };
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center bg-background p-4 transition-all duration-[900ms] ${leaving ? "scale-105 opacity-0" : "opacity-100"}`}>
-      <Frame className="flex h-full max-h-[760px] w-full max-w-md flex-col">
-        <div className="flex h-full flex-col items-center justify-between text-center">
+    <div className={`opening-screen fixed inset-0 z-50 overflow-y-auto bg-background transition-all duration-[900ms] ${leaving ? "scale-105 opacity-0" : "opacity-100"}`}>
+      <div className="grid min-h-full place-items-center p-4">
+      <Frame className="opening-frame w-full max-w-md">
+        <div className="opening-content flex flex-col items-center justify-between gap-4 text-center">
           <div className="animate-fade-in">
             <p className="eyebrow">{wedding.invitePhrase}</p>
             <h1 className="mt-6 text-5xl leading-none text-wine sm:text-6xl">
@@ -131,6 +133,7 @@ function Opening({ onOpen }: { onOpen: () => void }) {
           <p className="max-w-xs font-serif text-lg italic leading-snug text-muted-foreground">{wedding.inviteLine}</p>
         </div>
       </Frame>
+      </div>
     </div>
   );
 }
@@ -341,13 +344,7 @@ function Index() {
 
         {/* Gallery */}
         <Section id="gallery" eyebrow="Moments" heading="Gallery">
-          <div className="mx-auto max-w-5xl columns-2 gap-3 md:columns-3 [&>*]:mb-3">
-            {wedding.gallery.map((g, i) => (
-              <button key={i} onClick={() => setLightbox(i)} className="reveal group block w-full overflow-hidden" aria-label={`View photo: ${g.alt}`}>
-                <img src={g.src} alt={g.alt} width={g.w} height={g.h} loading="lazy" className="w-full transition-transform duration-700 group-hover:scale-105" />
-              </button>
-            ))}
-          </div>
+          <Gallery onView={setLightbox} />
         </Section>
         {lightbox !== null && (
           <div role="dialog" aria-modal="true" aria-label="Photo viewer" onClick={() => setLightbox(null)}

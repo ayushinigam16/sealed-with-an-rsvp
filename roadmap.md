@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Replace gallery with the five newly supplied photos and move them left to right
+- [x] Keep the entire opening card accessible on small and short screens
+- [x] Suggest understated visual finishing touches without applying unrequested changes
 - [x] Add uploaded Ramada photo (IMG_8250.png) to the "Ramada Plaza by Wyndham JHV Varanasi" venue card
 - [x] Rename Varanasi venue to "Ramada Plaza by Wyndham JHV Varanasi"
 - [x] Update Eternity by Taj Group address to Gram Baikunthpur, Sadar, Kanpur, New Kanpur City, Uttar Pradesh 208017

@@ -2,7 +2,8 @@
 import venueRamada from "@/assets/venue-ramada.jpg";
 import venueTaj from "@/assets/venue-taj.jpg";
 import pHands from "@/assets/couple-hands.jpg.asset.json";
-import pEvening from "@/assets/couple-evening.jpg.asset.json";
+import pCafe from "@/assets/couple-cafe.jpg.asset.json";
+import pSelfie from "@/assets/couple-selfie.jpg.asset.json";
 import pHome from "@/assets/couple-at-home.jpg.asset.json";
 import pFestive from "@/assets/couple-festive.jpg.asset.json";
 import pMusic from "@/assets/music-flute.mp3.asset.json";
@@ -68,10 +69,11 @@ export const wedding = {
       description: "The setting for our Reception, a graceful evening to toast the beginning.", image: venueTaj },
   ],
   gallery: [
-    { src: pFestive.url, alt: "Ayush and Rajavi with sindoor on their foreheads", w: 1024, h: 1280 },
-    { src: pHands.url, alt: "Ayush and Rajavi holding hands", w: 1024, h: 1024 },
-    { src: pEvening.url, alt: "Ayush and Rajavi walking together at night", w: 1024, h: 1280 },
-    { src: pHome.url, alt: "Ayush and Rajavi together at home", w: 1024, h: 1024 },
+    { src: pHands.url, alt: "Ayush and Rajavi holding hands", w: 1000, h: 1500 },
+    { src: pHome.url, alt: "Ayush and Rajavi together at home", w: 1200, h: 1600 },
+    { src: pCafe.url, alt: "Ayush and Rajavi smiling together at a café", w: 1200, h: 1600 },
+    { src: pSelfie.url, alt: "Ayush and Rajavi smiling in a selfie", w: 1200, h: 1600 },
+    { src: pFestive.url, alt: "Ayush and Rajavi with sindoor on their foreheads", w: 1200, h: 1600 },
   ],
   shareMessage:
     "We're delighted to invite you to celebrate the wedding of Ayush & Rajavi on 20 November 2026 in Varanasi. Please join us ❤️",
