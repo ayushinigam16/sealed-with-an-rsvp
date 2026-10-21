@@ -1,25 +1,23 @@
-const GATEWAY = "https://connector-gateway.lovable.dev/google_sheets/v4";
-const SHEET_ID = "18ZO_AFf32rph_pxcGanPciJkrqYjknOLfQ3Txxba2Uo";
-
+// RSVPs are appended to the "RSVP Responses" Google Sheet by a Google Apps Script web app.
+// RSVP_SHEET_WEBHOOK_URL is the script's /exec URL, set as a Netlify environment variable.
 export async function appendRsvpRow(row: (string | number)[]) {
-  const lovable = process.env["LOVABLE_API_KEY"];
-  const sheets = process.env["GOOGLE_SHEETS_API_KEY"];
-  if (!lovable || !sheets) throw new Error("Google Sheets is not connected");
-  const res = await fetch(
-    `${GATEWAY}/spreadsheets/${SHEET_ID}/values/'RSVP Responses'!A:O:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${lovable}`,
-        "X-Connection-Api-Key": sheets,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ values: [row] }),
-    },
-  );
-  if (!res.ok) {
-    const body = await res.text();
-    console.error(`Sheets append failed [${res.status}]: ${body}`);
+  const url = process.env["RSVP_SHEET_WEBHOOK_URL"];
+  if (!url) throw new Error("RSVP sheet webhook is not configured");
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({ row }),
+    redirect: "follow",
+  });
+  const body = await res.text();
+  let ok = false;
+  try {
+    ok = res.ok && JSON.parse(body).ok === true;
+  } catch {
+    ok = false;
+  }
+  if (!ok) {
+    console.error(`Sheets append failed [${res.status}]: ${body.slice(0, 500)}`);
     throw new Error(`Sheets append failed [${res.status}]`);
   }
 }
