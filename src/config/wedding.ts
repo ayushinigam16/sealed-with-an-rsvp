@@ -1,12 +1,12 @@
 // Central wedding configuration — edit everything here.
 import venueRamada from "@/assets/venue-ramada.jpg";
 import venueTaj from "@/assets/venue-taj.jpg";
-import pHands from "@/assets/couple-hands.jpg.asset.json";
-import pCafe from "@/assets/couple-cafe.jpg.asset.json";
-import pSelfie from "@/assets/couple-selfie.jpg.asset.json";
-import pHome from "@/assets/couple-at-home.jpg.asset.json";
-import pFestive from "@/assets/couple-festive.jpg.asset.json";
-import pMusic from "@/assets/music-flute.mp3.asset.json";
+import pHands from "@/3d12980e-2c77-4cea-a1e6-8aa79d5a8742.jpeg";
+import pCafe from "@/1d1e6874-3a1d-4203-a07b-e747c0bd5e01.jpeg";
+import pSelfie from "@/29e69a24-ea53-4359-8085-df579b400e5a.jpeg";
+import pHome from "@/02a8c3b2-c4fe-44cd-9e34-59901ca3d35b.jpeg";
+import pFestive from "@/4932f84d-308d-45b7-b9d0-95c1cc7ef601.jpeg";
+import pMusic from "@/Flute Version Tujh Mein Rab Dikhta Hai Rab Ne Bana Di Jodi Salim-Sulaiman Jaideep Vijay Tambe.mp3";
 
 export type WeddingEvent = {
   id: string;
@@ -69,15 +69,15 @@ export const wedding = {
       description: "The setting for our Reception, a graceful evening to toast the beginning.", image: venueTaj },
   ],
   gallery: [
-    { src: pHands.url, alt: "Ayush and Rajavi holding hands", w: 1000, h: 1500 },
-    { src: pHome.url, alt: "Ayush and Rajavi together at home", w: 1200, h: 1600 },
-    { src: pCafe.url, alt: "Ayush and Rajavi smiling together at a café", w: 1200, h: 1600 },
-    { src: pSelfie.url, alt: "Ayush and Rajavi smiling in a selfie", w: 1200, h: 1600 },
-    { src: pFestive.url, alt: "Ayush and Rajavi with sindoor on their foreheads", w: 1200, h: 1600 },
+    { src: pHands, alt: "Ayush and Rajavi holding hands", w: 1000, h: 1500 },
+    { src: pHome, alt: "Ayush and Rajavi together at home", w: 1200, h: 1600 },
+    { src: pCafe, alt: "Ayush and Rajavi smiling together at a café", w: 1200, h: 1600 },
+    { src: pSelfie, alt: "Ayush and Rajavi smiling in a selfie", w: 1200, h: 1600 },
+    { src: pFestive, alt: "Ayush and Rajavi with sindoor on their foreheads", w: 1200, h: 1600 },
   ],
   shareMessage:
     "We're delighted to invite you to celebrate the wedding of Ayush & Rajavi on 20 November 2026 in Varanasi. Please join us ❤️",
-  musicSrc: pMusic.url, // "Tujh Mein Rab Dikhta Hai" (flute version) — plays via the floating music button
+  musicSrc: pMusic, // "Tujh Mein Rab Dikhta Hai" (flute version) — plays via the floating music button
 };
 
 export const mapsUrl = (q: string) =>
